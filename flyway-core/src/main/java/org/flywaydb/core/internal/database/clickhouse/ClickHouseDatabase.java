@@ -51,7 +51,7 @@ public class ClickHouseDatabase extends Database<ClickHouseConnection> {
     public String getRawCreateScript(Table table, boolean baseline) {
         String clusterName = configuration.getClickhouseClusterName();
         if (StringUtils.hasText(clusterName)) {
-            return "CREATE TABLE " + table + " ON CLUSTER " + clusterName + "(" +
+            return "CREATE TABLE '" + table + "' ON CLUSTER '" + clusterName + "' (" +
                     "    installed_rank Int32," +
                     "    version Nullable(String)," +
                     "    description String," +
